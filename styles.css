@@ -22,7 +22,7 @@
   --cols:12;
   --col:calc((100% - (var(--cols) - 1) * var(--gut)) / var(--cols));
 }
-/* ฟหกฟหก*/
+
 
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
