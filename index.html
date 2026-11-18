@@ -9,8 +9,35 @@
 <link rel="preconnect" href="https://miaoda.feishu.cn">
 <link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="styles.css">
+<script>
+  if ((!window.matchMedia || !window.matchMedia('(prefers-reduced-motion: reduce)').matches) &&
+      (!window.location.hash || window.location.hash === '#home')) {
+    document.documentElement.classList.add('intro-pending');
+  }
+</script>
 </head>
 <body>
+
+<div class="opening-screen" id="openingScreen">
+  <div class="opening-content" aria-hidden="true">
+    <div class="opening-brand">
+      <span class="opening-seal">洪</span>
+      <span class="opening-brand-copy">
+        <span class="opening-kicker mono">PORTFOLIO · 2026 · CHIANG MAI</span>
+        <span class="opening-name">สมชาย แซ่หง</span>
+        <span class="opening-name-en mono">HONG YUN SHAN</span>
+      </span>
+    </div>
+    <div class="opening-rule"><span></span></div>
+    <div class="opening-status mono">
+      <span>ENTERING CREATIVE ARCHIVE</span>
+      <span>01 — 04</span>
+    </div>
+  </div>
+  <button class="opening-skip mono" id="openingSkip" type="button" aria-label="ข้ามอนิเมชันเปิดเว็บ">
+    ข้าม <span aria-hidden="true">↗</span>
+  </button>
+</div>
 
 <header class="site-head">
   <div class="wrap head-inner">
@@ -22,10 +49,10 @@
       </span>
     </a>
     <nav class="nav" aria-label="เมนูหลัก">
+      <a href="#about">เกี่ยวกับ</a>
       <a href="#work">ผลงาน</a>
       <a href="#photo">ภาพถ่าย</a>
       <a href="#skills">ทักษะ</a>
-      <a href="#about">เกี่ยวกับ</a>
       <a href="#contact">ติดต่อ</a>
     </nav>
   </div>
@@ -47,65 +74,17 @@
           </h1>
           <p class="hero-lead" id="heroLead"></p>
           <ul class="hero-roles" id="heroRoles"></ul>
+          <div class="hero-actions">
+            <a class="hero-link hero-link--primary" href="#work">สำรวจผลงาน <span aria-hidden="true">↘</span></a>
+            <a class="hero-link" href="#contact">ติดต่อร่วมงาน</a>
+          </div>
         </div>
         <figure class="hero-fig">
-          <div class="media" data-src="assets/ตัวฉัน.png" data-ratio="3/4" data-alt="ภาพบุคคลของสมชาย แซ่หง">
-            <span class="media-note mono">assets/ตัวฉัน.png</span>
+          <div class="media" data-src="assets/ตัวฉัน.jpg" data-ratio="3/4" data-alt="ภาพบุคคลของสมชาย แซ่หง">
+            <span class="media-note mono">assets/ตัวฉัน.jpg</span>
           </div>
-          <figcaption class="mono">ภาพบุคคล · 2026</figcaption>
+          <figcaption class="mono">ภาพบุคคล · เชียงใหม่ · 2026</figcaption>
         </figure>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== works ===== -->
-  <section class="sec" id="work">
-    <div class="wrap">
-      <div class="sec-head">
-        <span class="label">ผลงาน</span>
-        <h2>งานที่เริ่มจากกริด<br>แล้วค่อยตัดส่วนเกินออก</h2>
-        <p class="note">มินิเกมเว็บแอปพลิเคชัน และวิดีโอยูทูป ทุกชิ้นคัดเลือกและจัดลำดับโครงสร้างอย่างพิถีพิถัน เพื่อประสบการณ์ใช้งานที่ลื่นไหล</p>
-      </div>
-      <div class="work-grid" id="workGrid"></div>
-    </div>
-  </section>
-
-  <!-- ===== photography ===== -->
-  <div class="night">
-    <section class="sec" id="photo">
-      <div class="wrap">
-        <div class="sec-head">
-          <span class="label">ภาพถ่าย · โฟกัส</span>
-      
-          <p class="note">รวมผลงานภาพถ่ายทัศนียภาพ สถาปัตยกรรม และบรรยากาศ ด้วยแสงธรรมชาติทั้งหมด สามารถคลิกดูภาพขนาดเต็มได้ทันที</p>
-        </div>
-        <div class="photo-grid" id="photoGrid"></div>
-      </div>
-    </section>
-  </div>
-
-  <!-- ===== skills ===== -->
-  <section class="sec" id="skills">
-    <div class="wrap">
-      <div class="sec-head">
-        <span class="label">ทักษะ</span>
-        <h2>สกิลที่ใช้จริง<br>ในสี่สายงาน</h2>
-        <p class="note">เว็บ โค้ด ภาพถ่าย และภาษาจีน — สี่อย่างนี้ต่อกันเป็นงานชิ้นเดียว ตัวเลขแสดงระดับความเชี่ยวชาญปัจจุบัน</p>
-      </div>
-      <div class="skills">
-        <div class="skills-intro">
-          <h3>อ่านโครงสร้างก่อนลงรายละเอียด</h3>
-          <p>งานเว็บเริ่มจากโครงหน้าและภาษาที่ใช้เขียน ภาพถ่ายเริ่มจากแสงและกรอบ ส่วนภาษาจีนเริ่มจากโครงประโยค</p>
-          <dl class="skill-note">
-            <dt>เครื่องมือเว็บ</dt>
-            <dd>VS Code · Figma · GitHub Pages</dd>
-            <dt>งานภาพ</dt>
-            <dd>Photoshop · Lightroom · Nikon D7100</dd>
-            <dt>ภาษา</dt>
-            <dd>ไทย · จีนกลาง · อังกฤษ (อ่านเอกสาร)</dd>
-          </dl>
-        </div>
-        <div class="skill-groups" id="skillGroups"></div>
       </div>
     </div>
   </section>
@@ -122,12 +101,14 @@
       <div class="about-grid">
         <div class="about-bio" id="aboutBio"></div>
         <figure class="about-fig">
-          <div class="media" data-src="assets/ผลงาน1.jpg" data-ratio="16/9" data-alt="ภาพผลงานที่คัดมา">
-            <span class="media-note mono">assets/ผลงาน1.jpg</span>
+          <div class="media" data-src="assets/canva-portrait-laptop.png" data-ratio="5/4" data-alt="สมชายกำลังทำงานกับคอมพิวเตอร์">
+            <span class="media-note mono">assets/canva-portrait-laptop.png</span>
           </div>
-          <figcaption class="mono">ภาพจากชุดผลงาน · 2026</figcaption>
+          <figcaption class="mono">ภาพขณะทำงานด้านไอที</figcaption>
         </figure>
       </div>
+
+      <div id="portfolioHighlights"></div>
 
       <div class="timeline">
         <div class="tl-head">
@@ -139,6 +120,67 @@
       </div>
 
       <div class="facts" id="facts"></div>
+    </div>
+  </section>
+
+  <!-- ===== works ===== -->
+  <section class="sec" id="work">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="label">ผลงาน</span>
+        <h2>งานที่เริ่มจากกริด<br>แล้วค่อยตัดส่วนเกินออก</h2>
+        <p class="note">มินิเกมเว็บแอปพลิเคชัน และวิดีโอยูทูป ทุกชิ้นคัดเลือกและจัดลำดับโครงสร้างอย่างพิถีพิถัน เพื่อประสบการณ์ใช้งานที่ลื่นไหล</p>
+      </div>
+      <div class="work-index">
+        <span class="work-index-label"><i aria-hidden="true"></i> SELECTED PROJECTS <span>/ PORTFOLIO 2026</span></span>
+        <span class="work-index-count mono" id="workCount">04 ENTRIES</span>
+      </div>
+      <div class="work-grid" id="workGrid"></div>
+    </div>
+  </section>
+
+  <!-- ===== photography ===== -->
+  <div class="night">
+    <section class="sec" id="photo">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="label">ภาพถ่าย · โฟกัส</span>
+          <h2>ภาพถ่ายจากสถานที่<br>และช่วงเวลาที่ประทับใจ</h2>
+          <p class="note">รวมภาพถ่ายทิวทัศน์ สถาปัตยกรรม ภาพบุคคล และบรรยากาศกิจกรรม สามารถคลิกดูภาพขนาดเต็มได้ทันที</p>
+        </div>
+        <div class="photo-carousel-host" id="photoGrid"></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ===== skills ===== -->
+  <section class="sec" id="skills">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="label">ทักษะ</span>
+        <h2>สกิลที่ใช้จริง<br>ในสี่สายงาน</h2>
+        <p class="note">เว็บ โค้ด ภาพถ่าย และภาษาจีน — สี่อย่างนี้ต่อกันเป็นงานชิ้นเดียว ตัวเลขแสดงระดับความเชี่ยวชาญปัจจุบัน</p>
+      </div>
+      <div class="skills">
+        <div class="skills-side">
+          <div class="skill-scene-carousel" id="skillSceneCarousel"></div>
+          <div class="skills-intro">
+            <h3>อ่านโครงสร้างก่อนลงรายละเอียด</h3>
+            <p>งานเว็บเริ่มจากโครงหน้าและภาษาที่ใช้เขียน ภาพถ่ายเริ่มจากแสงและกรอบ ส่วนภาษาจีนเริ่มจากโครงประโยค</p>
+            <dl class="skill-note">
+              <dt>เครื่องมือเว็บ</dt>
+              <dd>VS Code · Figma · GitHub Pages</dd>
+              <dt>งานภาพ</dt>
+              <dd>Photoshop · Lightroom · Nikon D7100</dd>
+              <dt>ภาษา</dt>
+              <dd>ไทย · จีนกลาง · อังกฤษ (อ่านเอกสาร)</dd>
+              <dt>เพิ่มเติม</dt>
+              <dd>คณิตคิดเร็ว</dd>
+            </dl>
+          </div>
+        </div>
+        <div class="skill-groups" id="skillGroups"></div>
+      </div>
     </div>
   </section>
 
